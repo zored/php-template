@@ -25,7 +25,8 @@ mv README.md.tmp README.md
 # Rename occurrences:
 replace () {
     for file in $(find * .idea -type f -follow -print); do
-        xargs sed -i -e "s/$1/$2/g" $file
+        # Replace in file without backup $1 -> $2:
+        sed -i '' -e "s/$1/$2/g" $file
     done
 }
 replace '%NAME%' "$name"
