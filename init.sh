@@ -34,9 +34,28 @@ replace '%NAMESPACE%' "$namespace"
 replace '%DISPLAY_NAME%' "$displayName"
 replace '%DESCRIPTION%' "$description"
 
+
 cat <<X
-Also add GitHub integrations:
-https://github.com/zored/$name/settings/installations
-- Travis
-- Packagist
+GitHub integrations: https://github.com/zored/$name/settings/installations
+- Travis: https://travis-ci.org/profile/zored
+- Packagist: https://packagist.org/packages/submit
+
+Side checks:
+- Scrutinizer: https://scrutinizer-ci.com/g/new
+- Coverage: https://coveralls.io/repos/new
+- AppVeyour: https://ci.appveyor.com/projects/new
 X
+
+# Update Git root:
+rm -rf .git
+git init
+git remote add origin git@github.com:zored/$name.git
+rm -- "$0"
+git add .
+git commit -am "Created from zored/php-template."
+
+if [[ $(curl --silent -I https://github.com/zored/$name | head -n1) != 'HTTP/1.1 200 OK' ]]; then
+    echo "Repo not found: push after creation."
+    exit 2
+fi
+git push
