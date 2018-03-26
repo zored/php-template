@@ -12,6 +12,8 @@ X
     exit 1
 fi
 
+set -xe
+
 name="$1" namespace="$2" displayName="$3" description="$4"
 
 mv .idea/XXX.iml .idea/$name.iml
