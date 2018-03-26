@@ -13,7 +13,8 @@ name="$1" namespace="$2" displayName="$3" description="$4"
 mv .idea/XXX.iml .idea/$name.iml
 
 # Remove note from README:
-tail -n +2 README.md > README.md
+tail -n +2 README.md > a
+mv a README.md
 
 # Rename occurrences:
 replace () {
@@ -21,7 +22,7 @@ replace () {
             -type f \
             -follow \
             -print |\
-        xargs sed -i -e "s/$1/$2/g"
+        xargs sed -i "s/$1/$2/g"
 }
 replace '%NAME%' "$name"
 replace '%NAMESPACE%' "$namespace"
