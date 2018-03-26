@@ -1,0 +1,36 @@
+{
+    "name": "zored/%NAME%",
+    "description": "%DESCRIPTION%",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rob",
+            "email": "i@ro.gl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zored\\%NAMESPACE%\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zored\\%NAMESPACE%\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.10",
+        "phpunit/phpunit": "^7.0",
+        "php-coveralls/php-coveralls": "^2.0",
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
