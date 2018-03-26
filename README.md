@@ -1,4 +1,4 @@
-**This is template for all PHP-repositories that [I](https://github.com/zored) create.** Clone this repo and run `./init.sh`
+Usage: `git clone https://github.com/zored/php-template.git NAME && cd $_ && ./init.sh $_ 'NameSpace' 'Short description' 'Long description'`.
 # PHP %DISPLAY_NAME%
 
 [![Latest Stable Version](https://poser.pugx.org/zored/%NAME%/version.png)](https://packagist.org/packages/zored/%NAME%)

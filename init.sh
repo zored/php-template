@@ -3,11 +3,7 @@
 if [[ "$#" != 4 ]]; then
     cat <<X
 Example:
-./init.sh \\
-    'telegram' \\
-    'Telegram' \\
-    'PHP Telegram API' \\
-    'Easy to use API for Telegram'
+./init.sh 'telegram' 'Telegram' 'PHP Telegram API' 'Easy to use API for Telegram'
 X
     exit 1
 fi
@@ -34,16 +30,7 @@ replace '%NAMESPACE%' "$namespace"
 replace '%DISPLAY_NAME%' "$displayName"
 replace '%DESCRIPTION%' "$description"
 
-
-cat <<X
-GitHub integrations: https://github.com/zored/$name/settings/installations
-- Travis: https://travis-ci.org/profile/zored
-- Packagist: https://packagist.org/packages/submit
-
-Side checks:
-- Scrutinizer: https://scrutinizer-ci.com/g/new
-- Coverage: https://coveralls.io/repos/new
-- AppVeyour: https://ci.appveyor.com/projects/new
+cat <<X >> todo.md
 X
 
 # Update Git root:
@@ -53,6 +40,9 @@ git remote add origin git@github.com:zored/$name.git
 rm -- "$0"
 git add .
 git commit -am "Created from zored/php-template."
+
+# Install dependencies:
+composer update
 
 if [[ $(curl --silent -I https://github.com/zored/$name | head -n1) != 'HTTP/1.1 200 OK' ]]; then
     echo "Repo not found: push after creation."
