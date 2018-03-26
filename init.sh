@@ -3,10 +3,10 @@
 if [[ "$#" != 4 ]]; then
     cat <<X
 Example:
-./init.sh \
-    'telegram' \
-    'Telegram' \
-    'PHP Telegram API' \
+./init.sh \\
+    'telegram' \\
+    'Telegram' \\
+    'PHP Telegram API' \\
     'Easy to use API for Telegram'
 X
     exit 1
