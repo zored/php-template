@@ -1,4 +1,3 @@
-!XXX.iml
 **/codeStyleConfig.xml
 **/codeStyles/*
 **/dataSources.ids
@@ -7,4 +6,6 @@
 **/sqlDataSources.xml
 **/tasks.xml
 **/workspace.xml
+*.iml
 *.iws
+!XXX.iml
