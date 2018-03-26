@@ -7,5 +7,4 @@
 **/sqlDataSources.xml
 **/tasks.xml
 **/workspace.xml
-*.iml
 *.iws
